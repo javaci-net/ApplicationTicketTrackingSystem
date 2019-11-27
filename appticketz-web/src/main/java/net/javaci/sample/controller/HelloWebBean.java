@@ -8,14 +8,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 
-@Controller(value = "helloBean")
-public class HelloBean implements Serializable {
+@Controller(value = "helloWebBean")
+public class HelloWebBean implements Serializable {
 
 	private static final long serialVersionUID = 4085285875380136779L;
 	
 	private String message = "Hello from Javaci.net";
 
-	private static final Logger log = LoggerFactory.getLogger(HelloBean.class);
+	private static final Logger log = LoggerFactory.getLogger(HelloWebBean.class);
 
 	@PostConstruct
 	public void init() {

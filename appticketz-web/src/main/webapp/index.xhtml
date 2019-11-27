@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<h:outputStylesheet name="components.css" library="primefaces" />
+	<h:outputStylesheet name="theme.css" library="primefaces-bootstrap" />
+	<h:outputStylesheet name="fa/font-awesome.css" library="primefaces" />
+</h:head>
+
+<body>
+
+	<p:dataTable var="appx" value="#{indexWebBean.applications}">
+		<p:column headerText="Name">
+			<h:outputText value="#{appx.name}" />
+		</p:column>
+
+		<p:column headerText="Description">
+			<h:outputText value="#{appx.description}" />
+		</p:column>
+
+		<p:column headerText="Owner">
+			<h:outputText value="#{appx.owner}" />
+		</p:column>
+	</p:dataTable>
+
+</body>
+</html>

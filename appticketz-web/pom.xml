@@ -15,8 +15,8 @@
 		<!-- ******* INTERNAL DEPENDENCIES ************************** -->
 		<dependency>
 			<groupId>net.javaci.sample</groupId>
-    		<artifactId>appticketz-db</artifactId>
-    		<version>0.0.1-SNAPSHOT</version>
+			<artifactId>appticketz-db</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<!-- ******* WEB DEPENDENCIES ******************************* -->
@@ -60,4 +60,13 @@
 		</dependency>
 
 	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 </project>

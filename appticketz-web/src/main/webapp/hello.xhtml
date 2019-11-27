@@ -8,10 +8,10 @@
 <h:head></h:head>
 <body>
 	<h:form>
-		<h:outputLabel value="#{helloBean.message}" />
+		<h:outputLabel value="#{helloWebBean.message}" />
 		<h:commandButton value="Hello World!"  actionListener="#{helloBean.clickHelloWorldButton}" />
 		
-		<p:outputLabel value="#{helloBean.message}"/>
+		<p:outputLabel value="#{helloWebBean.message}"/>
 		<p:commandButton value="Primefaces" icon="fa fa-fw  fa-motorcycle "  style="padding-bottom:5px" actionListener="#{helloBean.clickHelloWorldButton}"/>
 		<p:calendar/>
 
