@@ -55,6 +55,7 @@
 	<modules>
 		<module>appticketz-db</module>
 		<module>appticketz-web</module>
+		<module>appticketz-api</module>
 	</modules>
 	
 </project>
