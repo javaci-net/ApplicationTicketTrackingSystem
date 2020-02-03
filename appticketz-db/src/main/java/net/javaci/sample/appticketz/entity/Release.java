@@ -12,6 +12,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "apprelease") //  release is a special keyword in mysql @see https://forums.mysql.com/read.php?101,665004,665004
 public class Release {
@@ -29,6 +31,7 @@ public class Release {
 		joinColumns = @JoinColumn(name = "release_fk"), 
 		inverseJoinColumns = @JoinColumn(name = "application_fk")
 	)
+	@JsonIgnore
 	private Set<Application> deployedApplications;
 
 	public Release() {

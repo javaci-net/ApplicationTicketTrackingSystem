@@ -17,5 +17,12 @@ public abstract class Application_ {
 	public static volatile SingularAttribute<Application, String> description;
 	public static volatile SingularAttribute<Application, Integer> id;
 
+	public static final String OWNER = "owner";
+	public static final String RELEASES_TO_DEPLOY = "releasesToDeploy";
+	public static final String TICKETS = "tickets";
+	public static final String NAME = "name";
+	public static final String DESCRIPTION = "description";
+	public static final String ID = "id";
+
 }
 

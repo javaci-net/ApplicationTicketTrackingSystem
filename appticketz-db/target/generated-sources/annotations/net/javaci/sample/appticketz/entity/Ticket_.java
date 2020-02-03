@@ -18,5 +18,13 @@ public abstract class Ticket_ {
 	public static volatile SingularAttribute<Ticket, LocalDate> createDate;
 	public static volatile SingularAttribute<Ticket, LocalDateTime> createDateTime;
 
+	public static final String APPLICATION = "application";
+	public static final String DESCRIPTION = "description";
+	public static final String ID = "id";
+	public static final String TITLE = "title";
+	public static final String STATUS = "status";
+	public static final String CREATE_DATE = "createDate";
+	public static final String CREATE_DATE_TIME = "createDateTime";
+
 }
 

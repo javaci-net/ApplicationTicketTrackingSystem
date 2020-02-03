@@ -15,5 +15,10 @@ public abstract class Release_ {
 	public static volatile SingularAttribute<Release, Integer> id;
 	public static volatile SingularAttribute<Release, LocalDateTime> releaseDateTime;
 
+	public static final String DEPLOYED_APPLICATIONS = "deployedApplications";
+	public static final String NAME = "name";
+	public static final String ID = "id";
+	public static final String RELEASE_DATE_TIME = "releaseDateTime";
+
 }
 

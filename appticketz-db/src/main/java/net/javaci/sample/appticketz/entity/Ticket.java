@@ -12,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Transient;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Ticket {
 
@@ -35,6 +37,7 @@ public class Ticket {
 	)
 	*/
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JsonIgnore
 	private Application application;
 	
 	@Transient

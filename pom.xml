@@ -12,7 +12,8 @@
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.0.1.RELEASE</version>
+		<version>2.2.4.RELEASE</version>
+		<!-- <version>2.0.1.RELEASE</version>  -->
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 
@@ -21,10 +22,8 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<java.version>1.8</java.version>
-
-		<jsf.version>2.2.9</jsf.version>
-		<primefaces.version>6.1</primefaces.version>
-		<primefaces.theme.version>1.0.10</primefaces.theme.version>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
 	</properties>
 
 	<!-- Primefaces Theme Repositories -->

@@ -29,8 +29,6 @@ public interface ApplicationDAOCrudRepositoryImpl extends ApplicationDAO, JpaRep
 	long countByOwner(String owner);
 	Application findFirstByOrderByIdDesc();
 	List<Application> findTop2ByOrderByIdDesc();
-	List<Application> findByOwner(String owner);
-	List<Application> findByOwner(String owner, Sort sort);
 	Page<Application> findByOwner(String owner, Pageable pageable);
 	List<Application> findByOwnerOrderByNameAsc(String owner);
 	List<Application> findDistinctByOwner(String owner);
@@ -46,10 +44,16 @@ public interface ApplicationDAOCrudRepositoryImpl extends ApplicationDAO, JpaRep
 	boolean checkApplicationExistsByNameAndOwner(@Param("name") String name, @Param("owner") String owner);
 	
 	@EntityGraph(attributePaths = { "tickets", "releasesToDeploy" } , type = EntityGraphType.LOAD)
+	Page<Application> findAll(Pageable pageable);
+	
+	@EntityGraph(attributePaths = { "tickets", "releasesToDeploy" } , type = EntityGraphType.LOAD)
 	Application findWithTicketsAndReleasesById(Integer applicationId);
 	
 	@Query("SELECT a FROM Application a INNER JOIN FETCH a.tickets INNER JOIN FETCH a.releasesToDeploy WHERE a.id = :id")
 	Application findByIdWithTicketsAndReleasesV2(@Param("id") Integer applicationId);
+	
+	@Query("SELECT a FROM Application a INNER JOIN FETCH a.tickets INNER JOIN FETCH a.releasesToDeploy")
+	List<Application> findAllWithTicketsAndReleases();
 	
 	@Query("SELECT new "
 			+ "net.javaci.sample.appticketz.entity.dto.ApplicationDTO("
@@ -60,6 +64,15 @@ public interface ApplicationDAOCrudRepositoryImpl extends ApplicationDAO, JpaRep
 			+ "GROUP BY a.id, a.name, a.owner "
 			+ "HAVING a.id = :id")
 	ApplicationDTO findByIdWithTicketsAndReleasesV3(@Param("id") Integer applicationId);
+	
+	@Query("SELECT new "
+			+ "net.javaci.sample.appticketz.entity.dto.ApplicationDTO("
+			+ " a.name, a.owner, max(t.id), max(r.id)"
+			+ ")"
+			+ " FROM Application a "
+			+ "INNER JOIN a.tickets t INNER JOIN a.releasesToDeploy r "
+			+ "GROUP BY a.id, a.name, a.owner ")
+	List<ApplicationDTO> findApplicationDTOListWithTicketsAndReleases();
 	
 	/*-- SELECT new net.javaci.sample.appticketz.entity.dto.TicketStatsByStatusDTO
 	 *    ( t.status, count(t.id), min(t.createDateTime), max(t.createDateTime)) 

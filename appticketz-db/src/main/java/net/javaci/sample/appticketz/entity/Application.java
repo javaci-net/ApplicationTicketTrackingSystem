@@ -11,6 +11,8 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Application {
 
@@ -36,11 +38,13 @@ public class Application {
 	)
 	*/
 	@OneToMany(mappedBy = "application")
+	@JsonIgnore
     public List<Ticket> tickets;
     
     // On the target side, we only have to provide 
  	// the name , which maps the relationship
  	@ManyToMany(mappedBy = "deployedApplications")
+ 	@JsonIgnore
  	private Set<Release> releasesToDeploy;
 
  	public Application() {

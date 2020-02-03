@@ -13,14 +13,10 @@
 	<packaging>war</packaging>
 
 	<properties>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
-		<java.version>1.8</java.version>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<maven.compiler.source>1.8</maven.compiler.source>
-
+		<jsf.version>2.2.9</jsf.version>
 		<jsp-api.version>2.0</jsp-api.version>
+		<primefaces.version>6.1</primefaces.version>
+		<primefaces.theme.version>1.0.10</primefaces.theme.version>
 	</properties>
 
 	<dependencies>
